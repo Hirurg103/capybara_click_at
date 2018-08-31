@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "capybara_click_at"
   spec.version       = CapybaraClickAt::VERSION
   spec.authors       = ["Dzmitry"]
-  spec.email         = ["dzmitry.kovalenok@thehamon.com"]
+  spec.email         = ["dzm.kovk@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Adds click_at(x, y) Capybara helper}
+  spec.description   = %{Sometimes I want to click at some point on a map in the tests. This gem adds click_at(point) helper which serves the need}
+  spec.homepage      = "https://github.com/Hirurg103/capybara_click_at"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
