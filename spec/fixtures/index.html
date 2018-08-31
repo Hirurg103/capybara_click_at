@@ -2,6 +2,11 @@
 <html>
   <head>
     <script src="https://rawgit.com/jquery/jquery/1.12.4/dist/jquery.min.js"></script>
+    <script>
+     function log(text) {
+       $("<div>", { text: text }).appendTo('#log');
+     }
+    </script>
   </head>
 
   <body>
@@ -18,9 +23,7 @@
         $(document).on('click', function(e) {
           var x = e.pageX;
           var y = e.pageY;
-
-          $('#log').append(
-            $("<div>", { text: "Document clicked at (" + x + ", " + y + ")" }));
+          log("Document clicked at (" + x + ", " + y + ")");
         });
       </script>
 
@@ -35,8 +38,8 @@
         $(document).on('click', '#container', function(e) {
           var x = e.pageX - this.offsetLeft;
           var y = e.pageY - this.offsetTop;
-          $('#log').append(
-            $("<div>", { text: "Container clicked at (" + x + ", " + y + ")" }));
+          log("Container clicked at (" + x + ", " + y + ")");
+
          e.stopPropagation();
        });
       </script>
