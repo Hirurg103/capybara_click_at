@@ -1,6 +1,6 @@
 RSpec.describe CapybaraClickAt do
 
-  before { visit 'index.html' }
+  before { visit '/index.html' }
 
   it 'clicks at point in the document' do
     click_at(5, 5)

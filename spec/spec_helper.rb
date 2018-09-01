@@ -5,6 +5,7 @@ require 'capybara/dsl'
 include Capybara::DSL
 
 require 'pry'
+require 'rack/file'
 Capybara.app = Rack::File.new File.expand_path('../fixtures', __FILE__)
 
 require 'selenium-webdriver'
