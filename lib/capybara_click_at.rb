@@ -4,7 +4,7 @@ module CapybaraClickAt
   def click_at(x, y, options = {})
     capybara_version = Gem.loaded_specs["capybara"].version
 
-    if capybara_version < Gem::Version.new("3.0.0")
+    if capybara_version <= Gem::Version.new("3.0.0")
       page.execute_script "
         (function click(x, y, options) {
           var findElement = (function() {
