@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "capybara_click_at/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "capybara_click_at"
+  spec.name          = "capybara-click_at"
   spec.version       = CapybaraClickAt::VERSION
   spec.authors       = ["Dzmitry"]
   spec.email         = ["dzm.kovk@gmail.com"]

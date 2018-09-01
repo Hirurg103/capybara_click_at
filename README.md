@@ -12,7 +12,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :test do
-  gem 'capybara_click_at'
+  gem 'capybara-click_at'
 end
 ```
 
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install capybara_click_at
+    $ gem install capybara-click_at
 
 ### Rspec
 
