@@ -1,4 +1,4 @@
-# CapybaraClickAt - click_at(point) capybara helper for capybara v2/3
+# CapybaraClickAt - click_at(point) capybara helper
 
 ## Why do you need it?
 
