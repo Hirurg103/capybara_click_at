@@ -9,6 +9,8 @@ require 'rack/file'
 Capybara.app = Rack::File.new File.expand_path('../fixtures', __FILE__)
 
 require 'selenium-webdriver'
+require 'capybara-webkit'
+require 'capybara/poltergeist'
 Capybara.default_driver = :selenium
 
 RSpec.configure do |config|
@@ -23,4 +25,21 @@ RSpec.configure do |config|
   end
 
   config.include CapybaraClickAt
+end
+
+RSpec.configure do |config|
+  config.around(:each) do |example|
+    if driver = example.metadata[:driver]
+      Capybara.current_driver = driver
+    end
+
+    example.run
+
+    Capybara.use_default_driver
+  end
+end
+
+Capybara::Webkit.configure do |config|
+  config.allow_url("rawgit.com")
+  config.allow_url("raw.githubusercontent.com")
 end

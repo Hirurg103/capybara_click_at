@@ -6,7 +6,7 @@ module CapybaraClickAt
 
     if capybara_version < Gem::Version.new("3.0.0")
       page.execute_script "
-        (function click(x, y, options = {}) {
+        (function click(x, y, options) {
           var findElement = (function() {
             if(options.css) {
               return document.querySelector(options.css);
@@ -20,13 +20,16 @@ module CapybaraClickAt
           }),
           element = findElement(),
           rect = element.getBoundingClientRect(),
-          event = new MouseEvent('click', {
-            'bubbles': true,
-            'cancelable': true,
-            'clientX': x + rect.left,
-            'clientY': y + rect.top,
-            'target': element
-          });
+          event = document.createEvent('MouseEvent');
+
+          event.initMouseEvent(
+            'click',
+            true /* bubble */, true /* cancelable */,
+            window, element,
+            0, 0, rect.left + x, rect.top + y, /* coordinates */
+            false, false, false, false, /* modifier keys */
+            0 /*left*/, null
+          );
 
           element.dispatchEvent(event);
         })(#{ x }, #{ y }, { css: '#{options[:css]}', xPath: '#{options[:xpath]}' });"

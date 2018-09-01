@@ -37,6 +37,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "capybara", "~> 3.5"
   spec.add_development_dependency "selenium-webdriver", "~> 3.14.0"
+  spec.add_development_dependency "capybara-webkit", "~> 1.15"
+  spec.add_development_dependency "poltergeist", "~> 1.18"
   spec.add_development_dependency "pry", "~> 0.11.0"
   spec.add_development_dependency "puma", "~> 3.12.0"
   spec.add_development_dependency "appraisal", "~> 2.2.0"
