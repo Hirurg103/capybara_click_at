@@ -1,15 +1,19 @@
-# CapybaraClickAt
+# CapybaraClickAt - click_at(point) capybara helper for capybara v2/3
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/capybara_click_at`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Why do you need it?
 
-TODO: Delete this and the text above, and describe your gem
+1. If you want to click at certain point on a map
+2. If you want to click at certain point on a canvas, colour select etc.
+
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'capybara_click_at'
+group :test do
+  gem 'capybara_click_at'
+end
 ```
 
 And then execute:
@@ -20,24 +24,46 @@ Or install it yourself as:
 
     $ gem install capybara_click_at
 
+### Rspec
+
+In your spec_helper.rb
+
+```
+RSpec.configure do |config|
+  config.include CapybaraClickAt
+end
+```
+
+### Cucumber
+
+In your env.rb
+
+```
+World CapybaraClickAt
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+### Click at certain point on the page
 
-## Development
+```ruby
+click_at(5, 5)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Click at certain point inside a container specified by CSS or XPath selector
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+click_at(5, 5, css: '#map')
+click_at(5, 5, xpath: '//div[@id="select-colour"]')
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/capybara_click_at. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+1. Add a test case which covers the bug
+2. Add code which makes the test green
+3. Open pull request
+
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the CapybaraClickAt project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/capybara_click_at/blob/master/CODE_OF_CONDUCT.md).
