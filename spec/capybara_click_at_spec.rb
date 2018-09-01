@@ -12,13 +12,13 @@ RSpec.describe CapybaraClickAt do
         expect(page).to have_content 'Document clicked at (5, 5)'
       end
 
-      it 'clicks at a point in a container specified by a CSS selector' do
+      it 'clicks at a point in a container specified by CSS selector' do
         click_at(5, 5, css: '#container')
 
         expect(page).to have_content 'Container clicked at (5, 5)'
       end
 
-      it 'clicks at a point in a container specified by a XPath selector' do
+      it 'clicks at a point in a container specified by XPath selector' do
         click_at(5, 5, xpath: '//div[@id="container"]')
 
         expect(page).to have_content 'Container clicked at (5, 5)'
