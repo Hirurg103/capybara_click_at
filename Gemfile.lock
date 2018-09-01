@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capybara_click_at (0.1.0)
+    capybara-click_at (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -78,8 +78,8 @@ DEPENDENCIES
   appraisal (~> 2.2)
   bundler (~> 1.16)
   capybara (~> 3.5)
+  capybara-click_at!
   capybara-webkit (~> 1.15)
-  capybara_click_at!
   poltergeist (~> 1.18)
   pry (~> 0.11)
   puma (~> 3.12)
