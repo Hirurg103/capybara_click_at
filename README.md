@@ -6,6 +6,11 @@
 2. If you want to click at certain point on a canvas, colour select etc.
 
 
+## Tested versions and drivers
+
+- Capybara: v2.18, v3.0, v3.5
+- Drivers: selenium, webkit, poltergeist
+
 ## Installation
 
 Add this line to your application's Gemfile:
