@@ -17,5 +17,5 @@ appraise "capybara-3.0" do
 end
 
 appraise "capybara-3.5" do
-  gem "capybara", "3.0.0"
+  gem "capybara", "3.5.0"
 end
