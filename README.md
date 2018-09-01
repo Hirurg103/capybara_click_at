@@ -9,7 +9,7 @@
 ## Tested versions and drivers
 
 - Capybara: v2.18, v3.0, v3.5
-- Drivers: selenium, webkit, poltergeist
+- Drivers: Selenium, Webkit, Poltergeist
 
 ## Installation
 
